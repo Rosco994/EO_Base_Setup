@@ -1,0 +1,52 @@
+// Copyright (c) Vult-r
+//
+// Use of this source code is governed by an MIT-style
+// license that can be found in the LICENSE file or at
+// https://opensource.org/licenses/MIT.
+
+Main
+{
+       questname     "Lost Dog"
+       version       1.1
+}
+state Begin
+{
+desc "Talk with stranger"
+       action AddNpcText(58, "Hi there, I have lost my dog and cannot find her anywhere.");
+       action AddNpcText(58, "Could you help me look around the forest to see if we can find her?");
+       action AddNpcInput(58,1,"Yes sure.");
+       action AddNpcInput(58,2,"No find it yourself.");
+       rule InputNpc(1) goto Continue
+       rule InputNpc(2) goto BeforeReset
+}
+state BeforeReset
+{
+desc "Talk to Stranger"
+       action AddNpcText(58, "That is a shame");
+       rule TalkedToNpc(58) goto Reset
+}
+state Reset
+{
+       action Reset();
+}
+state Continue
+{
+desc "Find the lost dog"
+       action ShowHint("-Hint- You can find the lost dog somewhere in the Aeven southern woodlands.");
+       action AddNpcText(58, "Come back when you have found my dog.");
+       rule EnterCoord(187,29,41) goto Return
+}
+state Return
+{
+desc "Return to stranger"
+       action ShowHint("You found the lost dog return to its owner...");
+       action AddNpcText(58, "OH MY GOD!! You found her thank you so much. Here is your reward");
+       rule TalkedToNpc(58) goto Reward
+}
+state Reward
+{
+        action     GiveEXP(1500);
+        action     GiveItem(1, 5000);
+        action     End();
+} 
+

@@ -1,0 +1,31 @@
+// Copyright (c) Vult-r
+//
+// Use of this source code is governed by an MIT-style
+// license that can be found in the LICENSE file or at
+// https://opensource.org/licenses/MIT.
+
+Main
+{
+    questname       "Journey to the Main Land"
+    version         1.2
+}
+state Begin
+{
+    desc	"Talk to the Boatman"
+    action  AddNpcText(57, "Are you ready to leave the island? You can come back once you're arrived");
+    action	AddNpcText(57, "It's recommended to stay and explore here until at least level 4. Are you sure you wish to leave?");
+    action	AddNpcInput(57, 1, "I'm ready to go!");
+    action	AddNpcInput(57, 2, "No I want to stay");
+    rule	InputNpc(1) goto traveltomain
+    rule	InputNpc(2) goto reset
+}
+State traveltomain
+{
+    action	SetCoord(1,10,17);
+    action	ShowHint("Hey! You've travelled via boat to a dock south of Aeven...");
+    rule	EnterCoord(1,10,17) goto reset
+}
+state Reset
+{
+    action	Reset();
+}
