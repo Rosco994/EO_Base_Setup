@@ -7,21 +7,22 @@
 Main
 {
 	questname 	"Piglet Trouble"
-	version		1
+	version		1.0
 }
 
 state Begin
 {
-	desc		"Kill 10 normal piglets."
+	desc		"Kill 5 normal piglets."
 	action		ShowHint("Quest reward : 100 EXP, 25 gold")
-	action		AddNpcText( 28 , "Those piglets are a real plague, could you help me get ride of them?" );
+	action		AddNpcText( 28 , "Those piglets are a real plague, could you help me get rid of them?" );
 	action		AddNpcText( 28 , "Could you kill 5 normal piglets for me? Press on your [CTRL] key to attack." );
 
 	action		AddNpcInput( 28 , 1 , "No thanks");
 	action		AddNpcInput( 28 , 2 , "Sounds good.");
+	
+	rule 		KilledNpcs( 230, 5) goto Talk2
 
 	rule 		InputNpc( 1 ) goto Reset
-	rule 		KilledNpcs( 230, 5) goto Talk2
 	rule		EnterMap( 1 ) goto Reset
 	rule		EnterMap( 5 ) goto Reset
 }
@@ -30,9 +31,9 @@ state Talk2
 {
 	desc		"Talk to the village adventurer."
 	action		AddNpcChat( 28 , "Great job!" );
-	action		AddNpcText( 28 , "Thank you so much thats better, please accept this gold for your great work." );
+	action		AddNpcText( 28 , "Thank you so much that is better, please accept this gold for your great work." );
 
-	rule 		TalkedToNpc( 28 ) goto GetReward
+	rule 		TalkedToNpc( 28 ) goto GetReward // requires to talk
 	rule		EnterMap( 1 ) goto Reset
 	rule		EnterMap( 5 ) goto Reset
 
@@ -51,5 +52,5 @@ state GetReward
 state Reset
 {
 	action		ShowHint("Piglet trouble quest aborted..")
-	action		Reset()
+	action		Reset() // reset and abort quest
 }	
