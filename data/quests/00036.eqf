@@ -7,21 +7,21 @@
 Main
 {
 	questname 	"Sheep Protector (rep)"
-	version		1
+	version		1.0
 }
 
 state Begin
 {
 	desc		"Kill 5 Snakes"
 	action		ShowHint("Quest reward : 210 EXP (REP)")
-	action		AddNpcText( 36 , "Its terrible, those ugly snakes are killing all my cattle." );
-	action		AddNpcText( 36 , "Im too old to fight. I wish someone could help me killing those snakes!" );
+	action		AddNpcText( 36 , "It's terrible, those ugly snakes are killing all my cattle." );
+	action		AddNpcText( 36 , "I'm too old to fight. I wish someone could help me killing those snakes!" );
 
 	action		AddNpcInput( 36 , 1 , "No thanks");
 	action		AddNpcInput( 36 , 2 , "I help you!");
 
-	rule 		InputNpc( 1 ) goto Reset
 	rule 		KilledNpcs( 6, 5) goto Talk1
+	rule 		InputNpc( 1 ) goto Reset
 }
 
 state Talk1
@@ -29,7 +29,7 @@ state Talk1
 	desc		"Talk to old farmer Jerzy"
 	action		ShowHint("You have successfully killed 5 snakes!")
 	action		AddNpcChat( 36 , "Thank you!" );
-	action		AddNpcText( 36 , "Thank you! I hope my sheeps are safe for now.." );
+	action		AddNpcText( 36 , "Thank you! I hope my sheep are safe for now.." );
 	rule		TalkedToNpc( 36 ) goto GetReward
 }
 

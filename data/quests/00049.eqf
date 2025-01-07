@@ -7,17 +7,17 @@
 Main
 {
 	questname 	"Snake Hunt (rep)"
-	version		1
+	version		1.0
 }
 
 state Begin
 {
 	desc		"Kill 3 snakes."
 	action		ShowHint("Quest reward : 66 EXP and 20 gold (REP)")
-	action		AddNpcText( 49 , "Hi im hunting some snakes, would you like to join me?" );
+	action		AddNpcText( 49 , "Hi I'm hunting some snakes, would you like to join me?" );
 	action		AddNpcText( 49 , "As you can see there is (rep) behind my name, this means that you can do this quest as many times as you like." );
 	action		AddNpcText( 49 , "You will find a lot more (rep) quests all over the world, however keep in mind that you can only have 10 active quests at a time!" );
-	action		AddNpcText( 49 , "Once your questbook is full, you need to abort an active quest to be able to take a new quest. Click on the Q button in the upper left corner to find out." );
+	action		AddNpcText( 49 , "Once your quest book is full, you need to abort an active quest to be able to take a new quest. Click on the Q button in the upper left corner to find out." );
 	action		AddNpcText( 49 , "Are you ready to hunt 3 snakes?" );
 
 	action		AddNpcInput( 49 , 1 , "No abort");
@@ -33,7 +33,7 @@ state Talk1
 	desc		"Talk to the snake hunter"
 	action		ShowHint("You have successfully killed 3 snakes!")
 	action		AddNpcChat( 49 , "Great!" );
-	action		AddNpcText( 49 , "Great you killed 10 snakes, snake hunting is fun isnt it, i cannot get enough!" );
+	action		AddNpcText( 49 , "Great you killed 3 snakes, snake hunting is fun isn't it, I cannot get enough!" );
 	action		AddNpcText( 49 , "Unlike normal quests you can redo a (rep) quests as many times as you like, just talk to me again when you are ready for some more hunting." );
 	action		AddNpcText( 49 , "Remember that you can only have 10 active quests at a time, you can find out about you quests by clicking on the Q button in the upper left corner." );
 	action		AddNpcText( 49 , "Ok, here is your reward, 20 gold and 66 exp. Many thanks for your aid." );
@@ -44,11 +44,12 @@ state Talk1
 
 state GetReward
 {
+
+	action		GiveExp(66);
+	action		GiveItem(1,20);
 	action		ShowHint("You gained 66 EXP and 20 gold (REP)");
 	action		PlaySound(17);
 
-	action		GiveExp(66)
-	action		GiveItem(1,25)
 	action		Reset()
 }
 

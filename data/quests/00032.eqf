@@ -7,14 +7,14 @@
 Main
 {
 	questname 	"Lost Piggy"
-	version		1
+	version		1.0
 }
 
 state Begin
 {
 	desc		"Talk to little Eddy."
-	action		AddNpcText( 32 , "Boohoo i lost little piggy, my favorite toy!" );
-	action		AddNpcText( 32 , "During visiting my aunty Cyndi in the village i lost it, and i can't find it back!" );
+	action		AddNpcText( 32 , "Boohoo I lost little piggy, my favourite toy!" );
+	action		AddNpcText( 32 , "During visiting my aunty Cyndi in the village I lost it, and I can't find it back!" );
 
 	rule 		TalkedToNpc( 32 ) goto Begin2
 	rule		EnterMap( 1 ) goto Reset
@@ -30,8 +30,8 @@ state Begin2
 	action		AddNpcInput( 32 , 1 , "No thanks");
 	action		AddNpcInput( 32 , 2 , "Sure");
 
-	rule 		InputNpc( 1 ) goto Reset
 	rule 		GotItems( 483 , 1 ) goto Talk2
+	rule 		InputNpc( 1 ) goto Reset
 	rule		EnterMap( 1 ) goto Reset
 	rule		EnterMap( 5 ) goto Reset
 }
@@ -39,7 +39,7 @@ state Begin2
 state Talk2
 {
 	desc		"Talk to little Eddy."
-	action		ShowHint("You succesfully collected 10 blob slime")
+	action		ShowHint("You successfully collected little piggy")
 	action		AddNpcChat( 32 , "Yeeee!" );
 	action		AddNpcText( 32 , "You found it! You find little piggy! As promised, please take this reward!" );
 

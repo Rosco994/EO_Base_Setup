@@ -1,0 +1,66 @@
+// Copyright (c) Vult-r
+//
+// Use of this source code is governed by an MIT-style
+// license that can be found in the LICENSE file or at
+// https://opensource.org/licenses/MIT.
+
+Main
+{
+        questname       "Skywonder Rescue"
+        version         1.2
+}
+state Begin
+{
+        desc    "Talk to Jessica"
+        action  AddNpcText(13, "Hello, as you can see I live peacefully with the blobsies in the wonderful sky, then one day the wolfman and the foxes got into a fight and all the foxes moved to here");
+        rule    TalkedToNpc(13) goto TalkToWolfLeader
+}
+state TalkToWolfLeader
+{
+        desc    "Talk to the Wolf Leader"
+        action  AddNpcText(13, "Go talk to the wolfman first I amm sure he is willing to compromise so we can all live in peace again.");
+        action  AddNpcText( 14, "Hello there, I see Jessica sent you, what do you want?");
+        action  AddNpcInput( 14, 1, "I come in peace");
+        action  AddNpcInput( 14, 2, "Nothing, bye");
+        rule    InputNpc(1) goto GetBirdFeathers
+        rule    InputNpc(2) goto ResetSR
+}
+state GetBirdFeathers
+{
+        desc    "Find 10 bird feathers"
+        action  AddNpcText( 14, "We are currently at war with the birdmans on the other mountain. I am currently too busy to talk about peace with the foxes.");
+        action  AddNpcText( 14, "You know I hate those annoying birdmans, if you help us fight the birdmans and bring me 10 bird feathers I will think about your offer." );
+        rule    GotItems(299,10) goto GiveFeathers
+ 
+}
+state GiveFeathers
+{
+        desc    "Give 10 bird feathers"
+        action  AddNpcText(14, "Hi again, I can see you have been fighting with the birdmans, your help is greatly appreciated!");
+        action  AddNpcText(14, "Will you give me those bird feathers?");
+        action  AddNpcInput(14, 2, "Ok, here you are");
+        action  AddNpcInput(14, 1, "No, these are mine");
+        rule    InputNpc(2) goto TalkToJessica
+        rule    LostItems(299,10) goto GetBirdFeathers
+ 
+}
+state TalkToJessica
+{
+        desc    "Go see Jessica for your reward"
+        action  RemoveItem(299,10);
+        action  AddNpcText(14, "Go tell Jessica we shall make peace with the Foxes");
+        action  AddNpcText(13, "Thank you so much for your help, please accept this reward");
+        rule    TalkedToNpc(13) goto Reward
+}
+state Reward
+{
+        action  ShowHint("You gained 500 exp and 500 gold.");
+        action  GiveExp(500);
+        action  GiveItem(1, 500);
+        action  End();
+}
+
+state ResetSR
+{
+	action Reset();
+}

@@ -7,7 +7,7 @@
 Main
 {
        questname     "Lost Dog"
-       version       1.1
+       version       1.0
 }
 state Begin
 {

@@ -7,13 +7,13 @@
 Main
 {
 	questname 	"King Audience (daily)"
-	version		1
+	version		1.0
 }
 
 state Begin
 {
 	desc		"Talk to royal guard, castle"
-	action		AddNpcText( 51 , "Hi stranger! Im sorry but the king has oredered not to be disturbed." );
+	action		AddNpcText( 51 , "Hi stranger! I'm sorry but the king has ordered not to be disturbed." );
 
 	action		AddNpcInput( 51 , 1 , "Okay, bye bye");
 	action		AddNpcInput( 51 , 2 , "I need to see the king!");
@@ -26,41 +26,41 @@ state Begin2
 {
 	desc		"Find Big Throat"
 	action		ShowHint("Quest reward : 1067 EXP and King Scroll (DAILY)")
-	action		AddNpcText( 51 , "Im sorry but the king ordered us to stop all citizens, he is very busy. There is maybe a way to earn your audience, we have a troublesome situation." );
-	action		AddNpcText( 51 , "Rumors spread that there is a big monster near the castle, far south from here. Some witnesses called him 'Big Throat'." );
+	action		AddNpcText( 51 , "I'm sorry but the king ordered us to stop all citizens, he is very busy. There is maybe a way to earn your audience, we have a troublesome situation." );
+	action		AddNpcText( 51 , "Rumours spread that there is a big monster near the castle, far south from here. Some witnesses called him 'Big Throat'." );
 	action		AddNpcText( 51 , "Although the monster never leaves his hole, its living dangerously close to the castle!" );
-	action		AddNpcText( 51 , "If you could kill the monster im sure the king wants to see you." );
+	action		AddNpcText( 51 , "If you could kill the monster I'm sure the king wants to see you." );
 
 	action		AddNpcInput( 51 , 1 , "I want to abort this mission");
 	action		AddNpcInput( 51 , 2 , "Ok, no problem!");
 
-	rule		DoneDaily( 1 ) goto EndWithoutReset // once a day ( 1 )
+	rule 		GotItems( 490, 1 ) goto EndByAlready
+	rule		DoneDaily( 1 ) goto EndWithoutReset
 	rule 		InputNpc( 1 ) goto Reset
 	rule		EnterCoord( 11 , 2 , 36) goto Begin3
-	rule 		GotItems( 490, 1 ) goto EndByAlready
 }
 
 state Begin3
 {
 	desc		"Kill Big Throat"
-	action		SetMap( 282 ,6 , 4 )
+	action		SetCoord( 282 ,6 , 4 )
 
 	action		ShowHint("Quest reward : 1067 EXP and King Scroll (DAILY)")
-	action		AddNpcText( 51 , "im sure the king wants to see you once you slayed the monster 'Big Throat'." );
+	action		AddNpcText( 51 , "I'm sure the king wants to see you once you slayed the monster 'Big Throat'." );
 
 	action		AddNpcInput( 51 , 1 , "I want to abort this mission");
 	action		AddNpcInput( 51 , 2 , "Ok, no problem!");
 
-	rule 		InputNpc( 1 ) goto Reset
 	rule 		KilledNpcs( 299, 1) goto Talk2
-	rule		EnterCoord( 11 , 2 , 36) goto Begin3
 	rule 		GotItems( 490, 1 ) goto EndByAlready
+	rule 		InputNpc( 1 ) goto Reset
+	rule		EnterCoord( 11 , 2 , 36) goto Begin3
 }
 
 state Talk2
 {
 	desc		"Talk to royal guard, castle"
-	action		SetMap( 11 ,2 , 36 )
+	action		SetCoord( 11 ,2 , 36 )
 
 	action		ShowHint("You killed big throat, go see the royal guard!")
 	action		AddNpcChat( 51 , "Welcome back hero! The great news about Big Throat's defeat has already received us!" );
@@ -84,7 +84,7 @@ state EndByAlready
 {
 	desc		"Talk to royal guard, castle"
 	action		ShowHint("You can only complete this quest once a day.");
-	action		AddNpcText( 51 , "Hmmm, you already seem to carry to aucience sroll. The king is expecting you just read the scroll." );
+	action		AddNpcText( 51 , "Hmmm, you already seem to carry the audience scroll. The king is expecting you just read the scroll." );
 	rule 		TalkedToNpc( 51 ) goto Reset
 }
 
@@ -92,7 +92,7 @@ state EndWithoutReset
 {
 	desc		"Talk to royal guard, castle"
 	action		ShowHint("You can only complete this quest once a day.");
-	action		AddNpcText( 51 , "Im sorry but you already received your audience with the king, please come back later." );
+	action		AddNpcText( 51 , "I'm sorry but you already received your audience with the king, please come back later." );
 	action		AddNpcText( 51 , "[ you cannot complete this quest today , please come back tomorrow ]" );
 	rule 		TalkedToNpc( 51 ) goto Reset
 }

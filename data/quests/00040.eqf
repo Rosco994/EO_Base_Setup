@@ -7,7 +7,7 @@
 Main
 {
 	questname 	"Bird Control (rep)"
-	version		1
+	version		1.0
 }
 
 state Begin
@@ -21,8 +21,8 @@ state Begin
 	action		AddNpcInput( 40 , 1 , "No thanks");
 	action		AddNpcInput( 40 , 2 , "Yes");
 
-	rule 		InputNpc( 1 ) goto Reset
 	rule 		KilledNpcs( 1, 10) goto Talk1
+	rule 		InputNpc( 1 ) goto Reset
 }
 
 state Talk1

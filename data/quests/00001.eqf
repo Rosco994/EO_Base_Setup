@@ -7,13 +7,13 @@
 Main
 {
 	questname 	"Pjedro's Son"
-	version		2
+	version		1.0
 }
 
 state Begin
 {
 	desc		"Talk to Pjedro"
-	action		AddNpcText( 1 , "Hi, i never seen you before, let me introduce myself. I am pjedro, i used to be a famous farmer known from Aeven to Anundo.." );
+	action		AddNpcText( 1 , "Hi, I never seen you before, let me introduce myself. I am pjedro, I used to be a famous farmer known from Aeven to Anundo." );
 	action		AddNpcText( 1 , "Now my days are sad, and empty. Do you want to hear more of my story?" );
 	action		AddNpcInput( 1 , 1 , "Yes please tell me");
 	action		AddNpcInput( 1 , 2 , "No time, sorry!");
@@ -26,7 +26,7 @@ state Learn1
 {
 	desc		"Talk to Pjedro's Wife"
 	action		ShowHint("Quest reward: 12600 EXP")
-	action		AddNpcText( 1 , "My son, i lost our son.. i should had listened to my wife." );
+	action		AddNpcText( 1 , "My son, I lost our son.. I should had listened to my wife." );
 	action		AddNpcText( 3 , "Yes our son is missing, but how.. how do you know about our son?");
 
 	action		AddNpcInput( 3 , 1 , "Pjedro told me");
@@ -41,7 +41,7 @@ state Learn2
 {
 	desc		"Talk to Merriad"
 	action		AddNpcText( 3 , "Me and pjedro, we worked very hard all our lives.. Harvesting crops, producing vegetables.. We worked way too hard." );
-	action		AddNpcText( 3 , "We sended our little son to deliver some vegtables to our relatives at the Stronghold, because we were too busy harvesting the crops..");
+	action		AddNpcText( 3 , "We sent our little son to deliver some vegetables to our relatives at the Stronghold, because we were too busy harvesting the crops..");
 
 	rule 		TalkedToNpc(3) goto Learn3
 }
@@ -49,10 +49,10 @@ state Learn2
 state Learn3
 {
 	desc		"Talk to Pjedro"
-	action		AddNpcText( 3 , "He traveled all alone, and never returned home.. I wish we would had never send him out *boohoo*" );
-	action		AddNpcText( 1 , "Merriad is mad at me since the accident.. We wish that we delivered those vegtables ourselves." );
+	action		AddNpcText( 3 , "He travelled all alone, and never returned home.. I wish we would have never sent him out *boohoo*" );
+	action		AddNpcText( 1 , "Merriad is mad at me since the accident.. We wish that we delivered those vegetables ourselves." );
 	action		AddNpcText( 1 , "Could you check with our relatives at the Stronghold?" );
-	action		AddNpcInput( 1 , 1 , "Yes, i will");
+	action		AddNpcInput( 1 , 1 , "Yes, I will");
 	action		AddNpcInput( 1 , 2 , "No, sorry");
 
 	rule 		InputNpc( 1 ) goto GoAnundo
@@ -61,8 +61,8 @@ state Learn3
 
 state GoReset
 {
-	action  	ShowHint("Pjedro's son quest aborted!")
-	action  	Reset()
+	action ShowHint("Pjedro's son quest aborted!");
+	action Reset();
 }
 
 state GoAnundo
@@ -79,7 +79,7 @@ state TalkAunt
 	action		AddNpcText( 9 , "I am so worried about Pjedro's son.. He never made it here, something terrible must have happened. ");
 	action		AddNpcText( 9 , "I never been outside this stronghold for years, I hope nothing bad happened.");
 
-	action		AddNpcInput( 9 , 1 , "No worries, i will find him");
+	action		AddNpcInput( 9 , 1 , "No worries, I will find him");
 	action		AddNpcInput( 9 , 2 , "Oh, the carnivos ate him");
 
 	rule 		InputNpc( 1 ) goto FindWitness
@@ -97,7 +97,7 @@ state FindWitness
 state FindWitness2
 {
 	desc		"Find out what happened.."
-	action		AddNpcText( 9 , "Are you serious? please stop joking! *panic in nenas eyes*");
+	action		AddNpcText( 9 , "Are you serious? please stop joking! *panic in Nena's eyes*");
 	rule		EnterMap( 41 ) goto TalkGuard
 }
 
@@ -105,9 +105,9 @@ state TalkGuard
 {
 	desc		"Talk to swamp guard"
 
-	action		AddNpcText( 10 , "You looking for a little kid carrying some vegtables. Yes i recall seeing a little kid walking here..");
-	action		AddNpcText( 10 , "But im affraid i cannot tell you more, we are not allowed to talk to civilians, Imperial rules you know..");
-	action		AddNpcText( 10 , "Please go see our captain. He is guarding Aeven's south entrance against the invading sheeps *chuckling*");
+	action		AddNpcText( 10 , "You looking for a little kid carrying some vegetables. Yes I recall seeing a little kid walking here..");
+	action		AddNpcText( 10 , "But I'm afraid I cannot tell you more, we are not allowed to talk to civilians, Imperial rules you know..");
+	action		AddNpcText( 10 , "Please go see our captain. He is guarding Aeven's south entrance against the invading sheep *chuckling*");
 
 	rule 		TalkedToNpc(10) goto GetPermission
 }
@@ -123,8 +123,8 @@ state TalkCaptain
 {
 	desc		"Speak captain, south Aeven"
 
-	action		AddNpcText( 34 , "So you are looking for a little kid that got lost on the way to the Stronghold? You are truely noble..");
-	action		AddNpcText( 34 , "Yes, ofcourse you have my permission.. I cannot believe he did not tell you right away, good guards are hard to find these days *sighs*");
+	action		AddNpcText( 34 , "So you are looking for a little kid that got lost on the way to the Stronghold? You are truly noble..");
+	action		AddNpcText( 34 , "Yes, of course you have my permission.. I cannot believe he did not tell you right away, good guards are hard to find these days *sighs*");
 
 	rule		TalkedToNpc(34) goto TalkGuard2
 }
@@ -137,7 +137,7 @@ state TalkGuard2
 	action		AddNpcText( 34 , "You can find him in the swamp, north of the Stronghold.");
 
 	action		AddNpcText( 10 , "You're back!");
-	action		AddNpcText( 10 , "We are already trying to rescue him, it seem the little kid went on an adventure in one of the caves north of here!");
+	action		AddNpcText( 10 , "We are already trying to rescue him, it seems the little kid went on an adventure in one of the caves north of here!");
 
 	rule 		TalkedToNpc(10) goto GoHH
 }
@@ -151,7 +151,7 @@ state GoHH
 
 state GotMap_Entry
 {
-	action		SetMap( 279, 7, 17)
+	action		SetCoord( 279, 7, 17)
 	rule		Always() goto GotCave
 }
 
@@ -170,7 +170,7 @@ state GotCave
 
 state GotRescue_Entry
 {
-	action		SetMap( 280, 15, 10)
+	action		SetCoord( 280, 15, 10)
 	rule		Always() goto TalkToSon
 }
 
@@ -178,11 +178,11 @@ state TalkToSon
 {
 	desc		"Talk to Pjedro's son"
 
-	action		AddNpcText( 12 , "I was bringing some vegtables to my aunt, but i must have taken the wrong turn.. And then i saw this cave..");
-	action		AddNpcText( 12 , "Im sorry i bene naughty *crying out loud* I will never do this again I promise!");
+	action		AddNpcText( 12 , "I was bringing some vegetables to my aunt, but I must have taken the wrong turn.. And then I saw this cave..");
+	action		AddNpcText( 12 , "I'm sorry I been naughty *crying out loud* I will never do this again I promise!");
 	action		AddNpcText( 12 , "I really miss my daddy, please take me home..");
 
-	action		AddNpcInput( 12 , 1 , "Those man will bring you home.");
+	action		AddNpcInput( 12 , 1 , "Those men will bring you home.");
 	action		AddNpcInput( 12 , 2 , "You been very naughty!!");
 
 	rule 		InputNpc( 1 ) goto FinalTalk_Entry
@@ -191,16 +191,16 @@ state TalkToSon
 
 state FinalTalk_Entry
 {
-	action		SetMap( 41, 44, 3)
+	action		SetCoord( 41, 44, 3)
 	rule		Always() goto FinalTalk
 }
 
 state FinalTalk
 {
 	desc		"Talk to Pjedro"
-	action		SetMap(240,10,7)
+	action		SetCoord(240,10,7)
 
-	action		AddNpcText( 1 , "Im going to bring him to bed he is so tired.. Thank you so much for bringing our boy back!!" );
+	action		AddNpcText( 1 , "I'm going to bring him to bed he is so tired.. Thank you so much for bringing our boy back!!" );
 	action		AddNpcText( 3 , "Thank you so much for bringing him back!");
 	action		AddNpcChat( 1 , "Thank you!" );
 	action		AddNpcChat( 3 , "Thank you!" );
@@ -214,5 +214,5 @@ state GetReward
 	action		ShowHint("You gained 12600 EXP!")
 	action		PlaySound(18)
 
-	action  	End()
+	action End()
 }	

@@ -7,21 +7,21 @@
 Main
 {
 	questname 	"Ayla's Quest (rep)"
-	version		6
+	version		6.0
 }
 
 state Begin
 {
 	desc		"Kill 20 rats"
-	action		AddNpcChat( 2 , "Hellow stranger" );
-	action		AddNpcText( 2 , "Oh my, i have yet to finish my magic spell, my Witch tutor will be mad" );
-	action		AddNpcText( 2 , "Could you do me a favor and kill 20 rats so i can cast the spell");
+	action		AddNpcChat( 2 , "Hello stranger" );
+	action		AddNpcText( 2 , "Oh my, I have yet to finish my magic spell, my Witch tutor will be mad" );
+	action		AddNpcText( 2 , "Could you do me a favour and kill 20 rats so I can cast the spell");
 
 	action		AddNpcInput( 2 , 1 , "I give up!");
 	action		AddNpcInput( 2 , 2 , "Working on it");
 
-	rule 		InputNpc( 1 ) goto Reset
 	rule 		KilledNpcs( 2, 20) goto Talk1
+	rule 		InputNpc( 1 ) goto Reset
 }
 
 state Talk1
@@ -29,9 +29,9 @@ state Talk1
 	desc		"Talk to Ayla, Aeven"
 	action		ShowHint("Quest reward: 1200 EXP (REP)")
 	action		ShowHint("You should talk to Ayla again!")
-	action		AddNpcChat( 2 , "Hellow stranger" );
-	action		AddNpcText( 2 , "Thank you! You have killed 10 rats for me, my tutor will be so pleased" );
-	action		AddNpcText( 2 , "Could you also kill 10 sheeps for me and return when you are done? ");
+	action		AddNpcChat( 2 , "Hello stranger" );
+	action		AddNpcText( 2 , "Thank you! You have killed 20 rats for me, my tutor will be so pleased" );
+	action		AddNpcText( 2 , "Could you also kill 20 sheep for me and return when you are done? ");
 
 	rule		TalkedToNpc( 2 ) goto KillSheeps
 }
@@ -39,21 +39,21 @@ state Talk1
 state KillSheeps
 {
 	desc		"Kill 20 sheep"
-	action		AddNpcText( 2 , "Could you also kill 20 sheeps for me and return when you are done? ");
+	action		AddNpcText( 2 , "Could you also kill 20 sheep for me and return when you are done? ");
 
 	action		AddNpcInput( 2 , 1 , "I give up!");
 	action		AddNpcInput( 2 , 2 , "Working on it");
 
-	rule 		InputNpc( 1 ) goto Reset
 	rule 		KilledNpcs( 170, 20) goto Talk2
+	rule 		InputNpc( 1 ) goto Reset
 }
 
 state Talk2
 {
 	desc		"Talk to Ayla, Aeven"
 	action		ShowHint("You should talk to Ayla again!")
-	action		AddNpcChat( 2 , "Hellow stranger" );
-	action		AddNpcText( 2 , "Thank you so much, however there is one last thing i need.. I would need a Terror potion to finish it but make sure you don't give me a love potion!" );
+	action		AddNpcChat( 2 , "Hello stranger" );
+	action		AddNpcText( 2 , "Thank you so much, however there is one last thing I need.. I would need a Terror potion to finish it but make sure you don't give me a love potion!" );
 
 	rule		GotItems(296,1) goto GiveTeror
 	rule		GotItems(292,1) goto GiveLove
@@ -62,10 +62,10 @@ state Talk2
 
 state GiveTeror
 {
-	desc		"Give a teror potion"
+	desc		"Give a terror potion"
 	action		AddNpcText( 2 , "Do you happen to have a terror potion for me?" );
 	action		AddNpcInput( 2 , 1 , "Here, take it");
-	action		AddNpcInput( 2 , 2 , "No, its mine");
+	action		AddNpcInput( 2 , 2 , "No, it's mine");
 	rule		LostItems(296,1) goto Talk2
 	rule		InputNpc( 1 ) goto GoodEnd
 }
@@ -76,7 +76,7 @@ state GiveLove
 	desc		"Give a love potion"
 	action		AddNpcText( 2 , "Do you happen to have a love potion for me?" );
 	action		AddNpcInput( 2 , 1 , "Here, take it");
-	action		AddNpcInput( 2 , 2 , "No, its mine");
+	action		AddNpcInput( 2 , 2 , "No, it's mine");
 	rule		LostItems(292,1) goto Talk2
 	rule		InputNpc( 1 ) goto BadEnd
 }
@@ -86,7 +86,7 @@ state GoodEnd
 	desc		"Talk to Ayla for a reward"
 	action		RemoveItem(296)
 	action		PlaySound(68);
-	action		AddNpcText( 2 , "You did it, thank you now i can finish my magic spell. Here is your reward.." );
+	action		AddNpcText( 2 , "You did it, thank you, now I can finish my magic spell. Here is your reward.." );
 	rule 		TalkedToNpc( 2 ) goto GetReward
 }
 
@@ -122,6 +122,6 @@ state GetReward2
 
 state Reset
 {
-	action		ShowHint("Witch quest quest aborted..")
+	action		ShowHint("Witch quest aborted..")
 	action		Reset()
 }	

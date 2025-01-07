@@ -33,7 +33,7 @@ state Talk2
 	action		AddNpcChat( 28 , "Great job!" );
 	action		AddNpcText( 28 , "Thank you so much that is better, please accept this gold for your great work." );
 
-	rule 		TalkedToNpc( 28 ) goto GetReward // requires to talk
+	rule 		TalkedToNpc( 28 ) goto GetReward
 	rule		EnterMap( 1 ) goto Reset
 	rule		EnterMap( 5 ) goto Reset
 
@@ -52,5 +52,5 @@ state GetReward
 state Reset
 {
 	action		ShowHint("Piglet trouble quest aborted..")
-	action		Reset() // reset and abort quest
+	action		Reset()
 }	

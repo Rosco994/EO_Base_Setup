@@ -7,16 +7,16 @@
 Main
 {
 	questname 	"Cactus holiday (rep)"
-	version		1
+	version		1.0
 }
 
-state Begin1
+state Begin
 {
 	desc		"Talk to Limbo Sailor, limbo desert"
 	action		AddNpcText( 46 , "We thought we had a great business plan, Limbo desert is great place and always sunny.." );
-	action		AddNpcText( 46 , "However im not sure if we can stay much longer in business.." );
+	action		AddNpcText( 46 , "However I'm not sure if we can stay much longer in business.." );
 
-	action		AddNpcInput( 46 , 1 , "Your complains spoil my holiday!");
+	action		AddNpcInput( 46 , 1 , "Your complaints spoil my holiday!");
 	action		AddNpcInput( 46 , 2 , "What happened?");
 
 	rule 		InputNpc( 1 ) goto Reset
@@ -27,14 +27,14 @@ state BeginKilling
 {
 	desc		"Kill 12 Cactusaurs"
 	action		ShowHint("Quest reward : 660 EXP (REP)")
-	action		AddNpcText( 46 , "Since the cactusaurs arrived most tourists are staying away from Limbo, i wish someone could do something about it." );
+	action		AddNpcText( 46 , "Since the cactusaurs arrived most tourists are staying away from Limbo, I wish someone could do something about it." );
 	action		AddNpcText( 46 , "I pay 75 gold and 660 experience whoever kill 12 cactusaurs." );
 
 	action		AddNpcInput( 46 , 1 , "No thanks.");
 	action		AddNpcInput( 46 , 2 , "I am working on it.");
 
-	rule 		InputNpc( 1 ) goto Reset
 	rule 		KilledNpcs( 12, 12) goto Talk1
+	rule 		InputNpc( 1 ) goto Reset
 }
 
 state Talk1

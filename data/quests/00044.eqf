@@ -6,14 +6,14 @@
 
 Main
 {
-	questname 	"Claw necklages (daily)"
-	version		1
+	questname 	"Claw Necklaces (daily)"
+	version		1.0
 }
 
 state Begin
 {
 	desc		"Talk to Dan, Aeven."
-	action		AddNpcText( 44 , "Crow claw necklages are said to have magical powers. Im selling quite a lot of them." );
+	action		AddNpcText( 44 , "Crow claw necklaces are said to have magical powers. I'm selling quite a lot of them." );
 
 	rule 		TalkedToNpc( 44 ) goto Begin2
 }
@@ -26,19 +26,20 @@ state Begin2
 	action		AddNpcText( 44 , "Could you find me 12 crow claws? I will pay you 120 gold and 1320 experience." );
 
 	action		AddNpcInput( 44 , 1 , "Forget it");
-	action		AddNpcInput( 44 , 2 , "Im working on it!");
-
-	rule		DoneDaily( 1 ) goto EndWithoutReset // once a day ( 1 )
-	rule 		InputNpc( 1 ) goto Reset
+	action		AddNpcInput( 44 , 2 , "I'm working on it!");
+	
 	rule 		GotItems( 248 , 12 ) goto Talk2
+
+	rule		DoneDaily( 1 ) goto EndWithoutReset
+	rule 		InputNpc( 1 ) goto Reset
 }
 
 state Talk2
 {
 	desc		"Talk to Dan, Aeven."
-	action		ShowHint("You succesfully collected 12 crow claws horns")
+	action		ShowHint("You successfully collected 12 crow claws.")
 	action		AddNpcChat( 44 , "New supplies!" );
-	action		AddNpcText( 44 , "Thanks for bringing me new supplies of crow claws, now i can make new merchandise!");
+	action		AddNpcText( 44 , "Thanks for bringing me new supplies of crow claws, now I can make new merchandise!");
 
 	rule 		TalkedToNpc( 44 ) goto GetReward
 	rule		LostItems( 248 , 12 ) goto Begin2
@@ -60,7 +61,7 @@ state EndWithoutReset
 {
 	desc		"Talk to Dan, Aeven."
 	action		ShowHint("You can only complete this quest once a day.");
-	action		AddNpcText( 44 , "I already have enough supplies! I will let you know once i need more crow claws.." );
+	action		AddNpcText( 44 , "I already have enough supplies! I will let you know once I need more crow claws.." );
 	action		AddNpcText( 44 , "[ you cannot complete this quest today , please come back tomorrow ]" );
 	rule 		TalkedToNpc( 44 ) goto Reset
 }

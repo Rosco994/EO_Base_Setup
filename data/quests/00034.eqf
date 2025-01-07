@@ -6,8 +6,8 @@
 
 Main
 {
-	questname 	"Boots For Diner"
-	version		1
+	questname 	"Boots For Dinner"
+	version		1.0
 }
 
 state Begin
@@ -17,7 +17,7 @@ state Begin
 	action		AddNpcText( 34 , "Aeven's finest captain, and where do they send me? On guard.." );
 
 	action		AddNpcInput( 34 , 1 , "Ya.. whatever");
-	action		AddNpcInput( 34 , 2 , "Its a shame!");
+	action		AddNpcInput( 34 , 2 , "It's a shame!");
 
 	rule 		InputNpc( 1 ) goto Reset
 	rule 		InputNpc( 2 ) goto Begin1
@@ -43,24 +43,24 @@ state Begin2
 {
 	desc		"Find the captains boots"
 	action		ShowHint("Quest reward : 2200 EXP")
-	action		AddNpcText( 34 , "Please find my boots, the sheeps ate it!" );
+	action		AddNpcText( 34 , "Please find my boots, the sheep ate it!" );
 
 	action		AddNpcInput( 34 , 1 , "No thanks");
-	action		AddNpcInput( 34 , 2 , "Im working on it!");
+	action		AddNpcInput( 34 , 2 , "I'm working on it!");
 
-	rule 		InputNpc( 1 ) goto Reset
 	rule 		GotItems( 484 , 1 ) goto Talk2
+	rule 		InputNpc( 1 ) goto Reset
 }
 
 state Talk2
 {
 	desc		"Give the boots to the captain."
-	action		ShowHint("You succesfully collected the captain boots")
+	action		ShowHint("You successfully collected the captain boots")
 	action		AddNpcChat( 34 , "My boots! My boots!" );
 	action		AddNpcText( 34 , "Thanks for bringing me back my boots. As promised, please accept my reward." );
 
-	rule 		TalkedToNpc( 34 ) goto GetReward
 	rule		LostItems( 484 , 1 ) goto Begin2
+	rule 		TalkedToNpc( 34 ) goto GetReward
 
 }
 

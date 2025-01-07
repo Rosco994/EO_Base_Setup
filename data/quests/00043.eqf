@@ -7,13 +7,13 @@
 Main
 {
 	questname 	"Snake Antidote (daily)"
-	version		1
+	version		1.0
 }
 
 state Begin
 {
 	desc		"Talk Steve snake hunter, Aeven."
-	action		AddNpcText( 43 , "The rattles of large snakes could harbor the secrets of an antidote." );
+	action		AddNpcText( 43 , "The rattles of large snakes could harbour the secrets of an antidote." );
 
 	rule 		TalkedToNpc( 43 ) goto Begin2
 }
@@ -22,22 +22,22 @@ state Begin2
 {
 	desc		"Collect 10 snake rattles"
 	action		ShowHint("Quest reward : 1500 EXP")
-	action		AddNpcText( 43 , "Please bring me 10 snake rattles and i will reward you with scientific knowledge!" );
+	action		AddNpcText( 43 , "Please bring me 10 snake rattles and I will reward you with scientific knowledge!" );
 
 	action		AddNpcInput( 43 , 1 , "Forget it");
-	action		AddNpcInput( 43 , 2 , "Im working on it!");
+	action		AddNpcInput( 43 , 2 , "I'm working on it!");
 
-	rule		DoneDaily( 1 ) goto EndWithoutReset // once a day ( 1 )
-	rule 		InputNpc( 1 ) goto Reset
 	rule 		GotItems( 254 , 10 ) goto Talk2
+	rule		DoneDaily( 1 ) goto EndWithoutReset
+	rule 		InputNpc( 1 ) goto Reset
 }
 
 state Talk2
 {
 	desc		"Talk Steve snake hunter, Aeven."
-	action		ShowHint("You succesfully collected 10 snake rattles horns")
+	action		ShowHint("You successfully collected 10 snake rattles horns")
 	action		AddNpcChat( 43 , "Snake Rattles!" );
-	action		AddNpcText( 43 , "Thanks for collecting all those snake rattles for me, i will be studying them shortly!" );
+	action		AddNpcText( 43 , "Thanks for collecting all those snake rattles for me, I will be studying them shortly!" );
 
 	rule 		TalkedToNpc( 43 ) goto GetReward
 	rule		LostItems( 254 , 10 ) goto Begin2

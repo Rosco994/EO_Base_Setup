@@ -7,7 +7,7 @@
 Main
 {
     questname       "Journey to the Main Land"
-    version         1.2
+    version         1.0
 }
 state Begin
 {

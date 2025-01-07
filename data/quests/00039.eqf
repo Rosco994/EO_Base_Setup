@@ -7,13 +7,13 @@
 Main
 {
 	questname 	"Aeven Sewers"
-	version		1
+	version		1.0
 }
 
 state Begin
 {
 	desc		"Talk to Drunk engineer, Aeven pub"
-	action		AddNpcText( 39 , "im toow *hic* druwnk, why diwd i drink on the fiuwrst day *hic* owf my *hic* nejw jowb.." );
+	action		AddNpcText( 39 , "I'm toow *hic* druwnk, why diwd I drink on the fiuwrst day *hic* owf my *hic* nejw jowb.." );
 	action		AddNpcText( 39 , "thej sewejr iws going to flood becausj noone is pressing thej *hic* butownss.." );
 
 	action		AddNpcInput( 39 , 1 , "Whatever");
@@ -50,11 +50,11 @@ state Begin3
 	action		AddNpcText( 39 , "[ Press first on the control button of sewer control unit #2 ]" );
 	action		AddNpcText( 39 , "[ Press secondly on the control button of sewer control unit #1 ]" );
 	action		AddNpcText( 39 , "[ Finally press on the control button of sewer control unit #3 ]" );
-	action		AddNpcText( 39 , "[ For our new workers - the control units are located at the center of the sewer ]" );
+	action		AddNpcText( 39 , "[ For our new workers - the control units are located at the centre of the sewer ]" );
 	action		AddNpcText( 39 , "Pleeajs help me?" );
 
 	action		AddNpcInput( 39 , 1 , "No thanks");
-	action		AddNpcInput( 39 , 2 , "Im working on it!");
+	action		AddNpcInput( 39 , 2 , "I'm working on it!");
 
 	rule 		InputNpc( 1 ) goto Reset
 	rule		EnterCoord( 18 , 51 , 51) goto Begin4
@@ -71,11 +71,11 @@ state Begin4
 	action		AddNpcText( 39 , "[ Press first on the control button of sewer control unit #2 ]" );
 	action		AddNpcText( 39 , "[ Press secondly on the control button of sewer control unit #1 ]" );
 	action		AddNpcText( 39 , "[ Finally press on the control button of sewer control unit #3 ]" );
-	action		AddNpcText( 39 , "[ For our new workers - the control units are located at the center of the sewer ]" );
+	action		AddNpcText( 39 , "[ For our new workers - the control units are located at the centre of the sewer ]" );
 	action		AddNpcText( 39 , "Pleeajs help me?" );
 
 	action		AddNpcInput( 39 , 1 , "No thanks");
-	action		AddNpcInput( 39 , 2 , "Im working on it!");
+	action		AddNpcInput( 39 , 2 , "I'm working on it!");
 
 	rule		EnterCoord( 18 , 49 , 57) goto Begin5
 	rule 		InputNpc( 1 ) goto Reset
@@ -92,11 +92,11 @@ state Begin5
 	action		AddNpcText( 39 , "[ Press first on the control button of sewer control unit #2 ]" );
 	action		AddNpcText( 39 , "[ Press secondly on the control button of sewer control unit #1 ]" );
 	action		AddNpcText( 39 , "[ Finally press on the control button of sewer control unit #3 ]" );
-	action		AddNpcText( 39 , "[ For our new workers - the control units are located at the center of the sewer ]" );
+	action		AddNpcText( 39 , "[ For our new workers - the control units are located at the centre of the sewer ]" );
 	action		AddNpcText( 39 , "Pleeajs help me?" );
 
 	action		AddNpcInput( 39 , 1 , "No thanks");
-	action		AddNpcInput( 39 , 2 , "Im working on it!");
+	action		AddNpcInput( 39 , 2 , "I'm working on it!");
 
 	rule		EnterCoord( 18 , 57 , 53) goto Begin6
 	rule 		InputNpc( 1 ) goto Reset
@@ -109,7 +109,7 @@ state Begin6
 	action		PlaySound(17);
 
 	action		AddNpcText( 39 , "Thajnk yo sow muwch *hic* youw ajre aj heroww" );
-	action		AddNpcText( 39 , "Now i neejd *hic* a drink.." );
+	action		AddNpcText( 39 , "Now I neejd *hic* a drink.." );
 
 	rule 		TalkedToNpc( 39 ) goto GetReward
 }

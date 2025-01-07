@@ -7,13 +7,13 @@
 Main
 {
 	questname 	"Candy's Potion (daily)"
-	version		1
+	version		1.0
 }
 
 state Begin
 {
 	desc		"Talk to Candy, Aeven."
-	action		AddNpcText( 45 , "Hi i'm Candy, the new apprentice of Aeven's mighty witch." );
+	action		AddNpcText( 45 , "Hi I'm Candy, the new apprentice of Aeven's mighty witch." );
 
 	rule 		TalkedToNpc( 45 ) goto Begin2
 }
@@ -22,23 +22,23 @@ state Begin2
 {
 	desc		"Collect 5 snake tooth"
 	action		ShowHint("Quest reward : 1100 EXP")
-	action		AddNpcText( 45 , "I can't complete my magic potion because im short of snake tooth, im just not powerfull enough to hunt them myself.." );
-	action		AddNpcText( 45 , "If you can hunt 5 snake tooth I will teach you some tricks i learned (1100 exp)" );
+	action		AddNpcText( 45 , "I can't complete my magic potion because I'm short of snake tooth, I'm just not powerful enough to hunt them myself.." );
+	action		AddNpcText( 45 , "If you can hunt 5 snake tooth I will teach you some tricks I learned (1100 exp)" );
 
 	action		AddNpcInput( 45 , 1 , "No time!");
-	action		AddNpcInput( 45 , 2 , "Im working on it!");
+	action		AddNpcInput( 45 , 2 , "I'm working on it!");
 
-	rule		DoneDaily( 1 ) goto EndWithoutReset // once a day ( 1 )
-	rule 		InputNpc( 1 ) goto Reset
 	rule 		GotItems( 253 , 5 ) goto Talk2
+	rule		DoneDaily( 1 ) goto EndWithoutReset
+	rule 		InputNpc( 1 ) goto Reset
 }
 
 state Talk2
 {
 	desc		"Talk to Candy, Aeven."
-	action		ShowHint("You succesfully collected 12 crow claws horns")
+	action		ShowHint("You successfully collected 12 crow claws horns")
 	action		AddNpcChat( 45 , "New supplies!" );
-	action		AddNpcText( 45 , "Ah! i see you found the 5 snake tooth for me already, thanks now i can complete the magic potion.");
+	action		AddNpcText( 45 , "Ah! I see you found the 5 snake tooth for me already, thanks now I can complete the magic potion.");
 
 	rule 		TalkedToNpc( 45 ) goto GetReward
 	rule		LostItems( 253 , 5 ) goto Begin2
@@ -59,7 +59,7 @@ state EndWithoutReset
 {
 	desc		"Talk to Candy, Aeven."
 	action		ShowHint("You can only complete this quest once a day.");
-	action		AddNpcText( 45 , "Thank you so much for collecting those final ingredients for my potion. I dont need more snake tooth at the moment!" );
+	action		AddNpcText( 45 , "Thank you so much for collecting those final ingredients for my potion. I don't need more snake tooth at the moment!" );
 	action		AddNpcText( 45 , "Maybe you should go see my sister Ayla, she is always looking for some rat tails! You can find her inside the witch mansion, located east of Aeven." );
 	action		AddNpcText( 45 , "[ you cannot complete this quest today , please come back tomorrow ]" );
 	rule 		TalkedToNpc( 45 ) goto Reset

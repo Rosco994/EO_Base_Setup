@@ -7,13 +7,13 @@
 Main
 {
 	questname 	"Truth Quest"
-	version		1
+	version		1.0
 }
 
 state Begin
 {
 	desc		"Talk to Serf"
-	action		AddNpcText( 15 , "Hellow stranger, im glad you found me I usually not see many visitors here.." );
+	action		AddNpcText( 15 , "Hello stranger, I'm glad you found me I usually not see many visitors here.." );
 	rule		TalkedToNpc( 15 ) goto KillMonsters
 }
 
@@ -40,8 +40,8 @@ state MonstersOk
 
 state GoReset
 {
-	action		AddNpcText( 15 , "Very well, I cant blame you.." );
-	action  	Reset();
+	action		AddNpcText( 15 , "Very well, I can't blame you.." );
+	action 		Reset();
 }
 
 state ExplainMore
@@ -95,7 +95,7 @@ state TellSerf2
 state FindIngredient1
 {
 	desc		"Find 10 herbs for Serf"
-	action		AddNpcText( 15 , "Very well, I would need 10 herbs, I heared they are for sale in Aeven.." );
+	action		AddNpcText( 15 , "Very well, I would need 10 herbs, I heard they are for sale in Aeven.." );
 	rule		GotItems( 46 , 10 ) goto GotIngredient1
 
 }
@@ -144,7 +144,7 @@ state FindIngredient3start
 {
 	desc		"Find 14 blob slimes for Serf"
 	action		RemoveItem( 358 , 10 )
-	action		AddNpcText( 15 , "Thank you.. I have not been using magic for a very long time, so Apozen couldnt track my location, I cannot remember all the ingredients anymore.." );
+	action		AddNpcText( 15 , "Thank you.. I have not been using magic for a very long time, so Apozen couldn't track my location, I cannot remember all the ingredients anymore.." );
 	action		AddNpcText( 15 , "Hmm I think I remember another ingredient, could you please find 14 blob slimes for me?");
 	rule		GotItems( 250 , 14 ) goto GotIngredient3
 }
@@ -152,7 +152,7 @@ state FindIngredient3start
 state FindIngredient3
 {
 	desc		"Find 14 blob slimes mushrooms for Serf"
-	action		AddNpcText( 15 , "Thank you.. I have not been using magic for a very long time, so Apozen couldnt track my location, I cannot remember all the ingredients anymore.." );
+	action		AddNpcText( 15 , "Thank you.. I have not been using magic for a very long time, so Apozen couldn't track my location, I cannot remember all the ingredients anymore.." );
 	action		AddNpcText( 15 , "Hmm I think I remember another ingredient, could you please find 14 blob slimes for me?");
 	rule		GotItems( 250 , 14 ) goto GotIngredient3
 
@@ -215,11 +215,11 @@ state FindAyla
 
 	desc		"Talk to Ayla"
 	action		AddNpcText( 15 , "Please safe my brother!" );
-	action		AddNpcChat( 2 , "These ingredients dont make much sense..");
-	action		AddNpcText( 2 , "These ingredients dont make much sense, I fear you need more ingredients to make something usefull..");
-	action		AddNpcText( 2 , "Why are you giving me those ingredients, who has send you here?");
+	action		AddNpcChat( 2 , "These ingredients don't make much sense..");
+	action		AddNpcText( 2 , "These ingredients don't make much sense, I fear you need more ingredients to make something useful..");
+	action		AddNpcText( 2 , "Why are you giving me those ingredients, who has sent you here?");
 
-	action		AddNpcInput( 2 , 1 , "Serf sended me here.");
+	action		AddNpcInput( 2 , 1 , "Serf sent me here.");
 	action		AddNpcInput( 2 , 2 , "I am trying to make salad.");
 	rule 		InputNpc( 1 ) goto TakAyla2
 }
@@ -229,7 +229,7 @@ state TakAyla2
 	desc		"Find the book of Apozen"
 
 	action		AddNpcText( 2 , "So Serf is still alive? and his brother was cursed by Apozen..");
-	action		AddNpcText( 2 , "I have been searching in our great book. Unfortunatly there no information about this kind of curse written in it..");
+	action		AddNpcText( 2 , "I have been searching in our great book. Unfortunately, there no information about this kind of curse written in it..");
 	action		AddNpcText( 2 , "I know there are more great books scattered around the world, would you please go find them to look if there is a topic about Apozen?");
 	action		AddNpcText( 2 , "Try to find as much information possible, and then come back to me.");
 
@@ -243,7 +243,7 @@ state TakAyla3
 	action		PlaySound(17);
 	action		ShowHint("The books appear to contain information about Apozens curse, hurry back to Ayla!");
 
-	action		AddNpcText( 2 , "HI again, did you found more information about the curse?");
+	action		AddNpcText( 2 , "HI again, did you find more information about the curse?");
 	action		AddNpcInput( 2 , 1 , "I read something in a book..");
 	action		AddNpcInput( 2 , 2 , "No nothing yet.");
 	rule 		InputNpc( 1 ) goto FindAyla4
@@ -255,7 +255,7 @@ state FindAyla4
 	desc		"Talk to Ayla"
 	action		AddNpcText( 2 , "So you read about the curse in the book of the Hitaru?");
 	action		AddNpcText( 2 , "Maybe the Hitaru was cursed by Apozen as well.. why else would he have a book about Apozen?");
-	action		AddNpcText( 2 , "The information we got right now isnt enough to break the curse, and the missing part is probably in Apozens lair");
+	action		AddNpcText( 2 , "The information we got right now isn't enough to break the curse, and the missing part is probably in Apozens lair");
 	action		AddNpcText( 2 , "You would be the only one who could possibly grab the last topic out of Apozen's book, but its maybe too much to ask for..");
 
 	action		AddNpcText( 2 , "Could you please go to Apozen and steal the last topic?");
@@ -285,7 +285,7 @@ state TakAyla5
 	action		AddNpcText( 2 , "Could you bring me 5 ancient scrolls in the meanwhile?");
 
 	action		AddNpcInput( 2 , 1 , "Alright, I get those scrolls");
-	action		AddNpcInput( 2 , 2 , "No, I wont do it.");
+	action		AddNpcInput( 2 , 2 , "No, I won't do it.");
 	rule 		InputNpc( 1 ) goto FindAncientScrolls
 }
 
@@ -314,8 +314,10 @@ state GotAncientScrolls
 state AncientCity
 {
 	desc		"Warp to ancient city"
+	
+	action		AddNpcText( 2, "Please hurry to the ancient sacred place!");
+	
 	action 		RemoveItem( 64, 4 );
-	action		AddNpcText( 2 , "Please hurry to the ancient sacred place!");
 	rule 		EnterMap( 54 ) goto AncientAltar
 }
 
@@ -331,11 +333,11 @@ state AncientAltar
 state InsideAltar
 {
 	desc		"Talk to Ayla"
-	action		SetMap( 243 , 8 , 14 ) // warp to ancient altar - fase 1
+	action		SetCoord( 243 , 8 , 14 ) // warp to ancient altar - fase 1
 
 	action		AddNpcText( 2 , "Thank you for bringing us all here, lets perform the ritual to help those poor souls..");
 	action		AddNpcText( 2 , "Are you ready to start the ritual?");
-	action		AddNpcInput( 2 , 1 , "Yes, im ready");
+	action		AddNpcInput( 2 , 1 , "Yes, I'm ready");
 	action		AddNpcInput( 2 , 2 , "No, not yet");
 	rule		LeaveMap( 243 ) goto AncientAltar
 	rule 		InputNpc( 1 ) goto DoRitual
@@ -347,14 +349,14 @@ state DoRitual
 
 	action		Quake();
 
-	action		SetMap( 244 , 7 , 7 ) // warp to ancient altar - fase 2	
+	action		SetCoord( 244 , 7 , 7 ) // warp to ancient altar - fase 2	
 	action		AddNpcText( 18 , "Thank you so much for helping us!!");
 	action		AddNpcText( 19 , "Thank you so much for helping us!!");
 
-	action		AddNpcText( 2 , "Wow, it really worked.. I cannot even beleive it myself!!");
+	action		AddNpcText( 2 , "Wow, it really worked.. I cannot even believe it myself!!");
 	action		AddNpcText( 2 , "Please find Serf. He is waiting for you in the swamps, and wanted to speak with you about what happened!");
 
-	action		AddNpcText( 15 , "I think I stay here in the swamps.. In here I will more safe from Apozen." );
+	action		AddNpcText( 15 , "I think I stay here in the swamps.. In here I will safer from Apozen." );
 	action		AddNpcText( 15 , "You really did an amazing job saving my brothers from the curse, please let me reward you.." );
 	action		AddNpcText( 15 , "I will reward you with a lot of experience, if you want I can even make a rare 'Staff of Truth' for you but only if you get me a knob staff and 10 orbs of light, as far as I know only Apozen drops the knob staff.." );
 	action		AddNpcText( 15 , "How can I reward you for saving my brothers?" );
@@ -371,7 +373,7 @@ state MakeLens
 	desc 		"Find a knob staff at Apozens lair"
 
 	action		AddNpcText( 15 , "Please bring me a knob staff so I can reward you.." );
-	action		AddNpcInput( 15 , 1 , "Im still working on it!");
+	action		AddNpcInput( 15 , 1 , "I'm still working on it!");
 	action		AddNpcInput( 15 , 2 , "Just give me my experience");
 
 	rule 		InputNpc( 2 ) goto GetExp
@@ -381,7 +383,7 @@ state MakeLens
 
 state GotKnob
 {
-	desc 		"Give the kob staff to Serf"
+	desc 		"Give the knob staff to Serf"
 
 	action		AddNpcText( 15 , "Could I have the knob staff please, I will use it to craft the Truth staff." );
 	action		AddNpcInput( 15 , 1 , "Ok, here is the knob staff");

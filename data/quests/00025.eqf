@@ -7,19 +7,19 @@
 Main
 {
 	questname 	"Susan's Quest (rep)"
-	version		1
+	version		1.0
 }
 
 state Begin
 {
-	desc		"Go to susan in the swamps"
+	desc		"Go to Susan in the swamps"
 	action		AddNpcChat( 25 , "Hi!" );
-	action		AddNpcText( 25 , "Oh hi.. didnt notive you I am so busy.." );
-	action		AddNpcText( 25 , "I used to be a priestess in this temple, but since the tenba cursed our temple I couldnt bare to watch the temple just die.." );
+	action		AddNpcText( 25 , "Oh hi.. didn't notice you I am so busy.." );
+	action		AddNpcText( 25 , "I used to be a priestess in this temple, but since the tenba cursed our temple I couldn't bare to watch the temple just die.." );
 	action		AddNpcText( 25 , "I bought this warrior equipment in Aeven and started to battle the Tenba, so this temple can hopefully become normal again." );
 	action		AddNpcText( 25 , "You look quite strong, would you be willing to help me fight the tenba?" );
 
-	action		AddNpcInput( 25 , 1 , "Not intrested");
+	action		AddNpcInput( 25 , 1 , "Not interested");
 	action		AddNpcInput( 25 , 2 , "I will help you");
 
 	rule 		InputNpc( 1 ) goto Reset
@@ -33,17 +33,17 @@ state KillMoles
 	action		ShowHint("Quest reward: 4500 EXP (REP)")
 	action		AddNpcText( 25 , "Please kill 60 evil swamp tenba's for me and I will reward you well!");
 
-	action		AddNpcInput( 25 , 1 , "Sorry, i give up.");
-	action		AddNpcInput( 25 , 2 , "Im working on it!");
+	action		AddNpcInput( 25 , 1 , "Sorry, I give up.");
+	action		AddNpcInput( 25 , 2 , "I'm working on it!");
 
-	rule 		InputNpc( 1 ) goto Reset
 	rule 		KilledNpcs( 232, 60) goto Talk2
+	rule 		InputNpc( 1 ) goto Reset
 }
 
 state Talk2
 {
 	desc		"Talk to Susan"
-	action		ShowHint("Go to susan for a reward!")
+	action		ShowHint("Go to Susan for a reward!")
 	action		AddNpcChat( 25 , "Thank you so much,!" );
 	action		AddNpcText( 25 , "Thank you so much *hug* here is a special reward for you!" );
 

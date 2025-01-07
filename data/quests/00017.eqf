@@ -6,13 +6,13 @@
 
 Main
 {
-	questname	"The maze (daily)"
-	version		1
+	questname	"The Maze (daily)"
+	version		1.0
 }
 
 state Begin
 {
-	desc		"Talk to maze master, Castle"
+	desc		"Talk to Maze Master, Castle"
 	action		AddNpcText( 17 , "Hello stranger I am the proud owner of this useless and extremely difficult maze." );
 	action		AddNpcText( 17 , "Do you want to know more?" );
 
@@ -26,7 +26,7 @@ state Begin
 
 state Begin1
 {
-	desc		"Talk to maze master, Castle"
+	desc		"Talk to Maze Master, Castle"
 	action		AddNpcText( 17 , "So, are you up for a challenge?");
 
 	action		AddNpcInput( 17 , 1 , "Sure, why not");
@@ -40,9 +40,9 @@ state Begin1
 
 state DoubleCheck
 {
-	desc		"Talk to maze master, Castle"
+	desc		"Talk to Maze Master, Castle"
 	action		ShowHint("Quest reward: 5000 EXP")
-	action		AddNpcText( 17 , "Caution!! This maze is extremly hard to solve, are you really sure?");
+	action		AddNpcText( 17 , "Caution!! This maze is extremely hard to solve, are you really sure?");
 
 	action		AddNpcInput( 17 , 1 , "Yes, I am sure");
 	action		AddNpcInput( 17 , 2 , "No, sorry");
@@ -56,8 +56,8 @@ state EnterMaze
 {
 	desc		"Solve the maze, Castle"
 
-	action		AddNpcText( 17 , "Try to solve this maze and i will reward you for it!");
-	action		SetMap( 47 , 8 ,66 );
+	action		AddNpcText( 17 , "Try to solve this maze and I will reward you for it!");
+	action		SetCoord( 47 , 8 ,66 );
 
 	rule		EnterCoord( 47 , 12 , 37) goto CheckPoint1
 	rule		EnterCoord( 47 , 12 , 38) goto CheckPoint1
@@ -92,7 +92,7 @@ state CheckPoint3
 
 state TalkReward
 {
-	desc		"Talk to maze master, Castle"
+	desc		"Talk to Maze Master, Castle"
 
 	action		AddNpcText( 17 , "That took you quite some time... You must be exhausted by now, here take this reward for solving the imperial maze.");
 	rule		TalkedToNpc( 17 ) goto GetReward
@@ -110,7 +110,7 @@ state GetReward
 
 state EndWithoutReset
 {
-	desc		"Talk to maze master, Castle"
+	desc		"Talk to Maze Master, Castle"
 	action		ShowHint("You can only complete this quest 3 times a day.");
 	action		AddNpcText( 17 , "Hmmm it seems you became way too good at solving my maze, this is no fun for me.. go away!" );
 	action		AddNpcText( 17 , "[ you cannot complete this quest today , please come back tomorrow ]" );
@@ -119,5 +119,5 @@ state EndWithoutReset
 
 state GoReset
 {
-	action  	Reset()
+	action Reset()
 }

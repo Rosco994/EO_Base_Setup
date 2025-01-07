@@ -7,7 +7,7 @@
 Main
 {
 	questname	"Factory Panic (rep)"
-	version		1
+	version		1.0
 }
 
 state Begin
@@ -20,7 +20,7 @@ state Begin
 	action		AddNpcText( 20 , "Would you please help us fix the main reactor, from that point we should be able to repair the rest of the factory.");
 	action		AddNpcText( 20 , "Will you please help us repair the main reactor of the factory?");
 
-	action		AddNpcInput( 20 , 1 , "Okay, i help you");
+	action		AddNpcInput( 20 , 1 , "Okay, I help you");
 	action		AddNpcInput( 20 , 2 , "No, sorry");
 
 	rule 		InputNpc( 1 ) goto ExplainMore
@@ -29,7 +29,7 @@ state Begin
 
 state GoReset
 {
-	action  	Reset();
+	action Reset();
 }
 
 state ExplainMore
@@ -41,14 +41,14 @@ state ExplainMore
 	action		AddNpcText( 20 , "To do this walk on top of the button located near the generators, once the main power grid is down you can access the main core area.");
 	action		AddNpcText( 20 , "The main reactor is somewhere deep underground, once you get there shut it down as well.");
 	action		AddNpcText( 20 , "From that point we can take it over, and hopefully get the factory under control as well.");	
-	rule		TalkedToNpc( 20 ) goto Node1_1
+	rule		TalkedToNpc( 20 ) goto Node1
 }
 
-state Node1_1
+state Node1
 {
 	desc		"Shutdown generator #1"
 
-	action		AddNpcText( 20 , "Please shutdown the upper right generator first, and return here so i can adjust the system.");	
+	action		AddNpcText( 20 , "Please shutdown the upper right generator first, and return here so I can adjust the system.");	
 	rule		EnterCoord( 209 , 20 , 10 ) goto Progress1
 }
 
@@ -70,7 +70,7 @@ state Progress2
 	action		PlaySound(70)
 	action		ShowHint("the generator was shutdown");
 
-	action		AddNpcText( 20 , "Please shutdown the upper left generator now, its going great so far..");	
+	action		AddNpcText( 20 , "Please shutdown the upper left generator now, it's going great so far..");	
 	rule		EnterCoord( 209 , 7 , 52) goto Progress3
 }
 
@@ -92,7 +92,7 @@ state Progress4
 	action		PlaySound(70)
 	action		ShowHint("the generator was shutdown");
 
-	action		AddNpcText( 20 , "Ok, the main power grid is down, i have unlocked the door to the main reactor for you.");
+	action		AddNpcText( 20 , "Ok, the main power grid is down, I have unlocked the door to the main reactor for you.");
 	action		AddNpcText( 20 , "I am not sure if the robots gained access to that area already, if so it might be dangerous in there.");
 	rule		TalkedToNpc( 20 ) goto MainReactor
 }
@@ -108,7 +108,7 @@ state EnterReactor
 {
 	desc		"Shut down the main reactor"
 
-	action		SetMap( 209, 14, 12);	
+	action		SetCoord( 209, 14, 12);	
 
 	rule		EnterCoord( 209 , 17 , 12) goto EnterReactor
 	rule		EnterCoord( 189 , 9 , 177) goto ReactorOk
@@ -119,7 +119,7 @@ state ReactorOk
 	desc		"Return to the co-worker"
 
 	action		PlaySound(70)
-	action		ShowHint("the main reactor was shutdown, return to the co-worker!");
+	action		ShowHint("the main reactor was shut down, return to the co-worker!");
 
 	action		AddNpcText( 20 , "Ok the main reactor is shutting down slowly.. from there we should be able to take control on the other reactors.");
 	action		AddNpcText( 20 , "Thank you for helping us without you we never could have done it, please accept this small reward.");

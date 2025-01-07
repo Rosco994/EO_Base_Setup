@@ -7,17 +7,17 @@
 Main
 {
 	questname 	"PeriPeri (rep)"
-	version		1
+	version		1.0
 }
 
 state Begin
 {
-	desc		"Go to the periperi farm"
-	action		AddNpcChat( 23 , "Hellow stranger" );
+	desc		"Go to the PeriPeri farm"
+	action		AddNpcChat( 23 , "Hello stranger" );
 	action		AddNpcText( 23 , "Oh my, since those angry moles appeared our harvest is wasted.." );
 	action		AddNpcText( 23 , "Would you be so kind to stop those moles for me?" );
 
-	action		AddNpcInput( 23 , 1 , "Not intrested");
+	action		AddNpcInput( 23 , 1 , "Not interested");
 	action		AddNpcInput( 23 , 2 , "I will help you");
 
 	rule 		InputNpc( 1 ) goto Reset
@@ -31,17 +31,17 @@ state KillMoles
 	action		ShowHint("Quest reward: 3100 EXP (REP)")
 	action		AddNpcText( 23 , "Please kill 50 moles for me and I will reward you with experience!");
 
-	action		AddNpcInput( 23 , 1 , "Sorry, i give up.");
-	action		AddNpcInput( 23 , 2 , "Im working on it!");
+	action		AddNpcInput( 23 , 1 , "Sorry, I give up.");
+	action		AddNpcInput( 23 , 2 , "I'm working on it!");
 
-	rule 		InputNpc( 1 ) goto Reset
 	rule 		KilledNpcs( 241, 50) goto Talk2
+	rule 		InputNpc( 1 ) goto Reset
 }
 
 state Talk2
 {
 	desc		"Talk to PeriPeri farmer"
-	action		ShowHint("Go to periperi for a reward!")
+	action		ShowHint("Go to PeriPeri for a reward!" );
 	action		AddNpcChat( 23 , "Thank you so much,!" );
 	action		AddNpcText( 23 , "Thank you so much, I can see you worked hard.. Please accept my humble reward." );
 

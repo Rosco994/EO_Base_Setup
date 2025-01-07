@@ -7,16 +7,16 @@
 Main
 {
 	questname 	"Peasant Courier (rep)"
-	version		1
+	version		1.0
 }
 
 state Begin
 {
 	desc		"Talk to the peasant woman"
 	action		ShowHint("Quest reward : 190 EXP (REP)")
-	action		AddNpcText( 37 , "Hi stranger, i really need some help.." );
+	action		AddNpcText( 37 , "Hi stranger, I really need some help.." );
 	action		AddNpcText( 37 , "I couldn't take it anymore. The rats invaded our farm and I ran away to this small shed." );
-	action		AddNpcText( 37 , "Can you bring some bread to my husband, i fear he might not eat well while im gone." );
+	action		AddNpcText( 37 , "Can you bring some bread to my husband, I fear he might not eat well while I'm gone." );
 
 	action		AddNpcInput( 37 , 1 , "No thanks");
 	action		AddNpcInput( 37 , 2 , "I will bring it to him.");
@@ -38,14 +38,14 @@ state Talk1
 {
 	desc		"Bring the bread to farmer Jorge"
 	action		ShowHint("Quest reward : 180 EXP (REP)")
-	action		AddNpcText( 37 , "Here take this bread, i just made it myself." );
-	action		AddNpcText( 37 , "Please bring it to my hustand, old farmer Jorge, so he can have a proper meal." );
+	action		AddNpcText( 37 , "Here take this bread, I just made it myself." );
+	action		AddNpcText( 37 , "Please bring it to my husband, old farmer Jorge, so he can have a proper meal." );
 
-	action		AddNpcText( 35 , "A bread from my wife? I haven't eat properly since days, those rats are driving me crazy!" );
+	action		AddNpcText( 35 , "A bread from my wife? I haven't eaten properly in days, those rats are driving me crazy!" );
 
 	action		GiveItem( 485 , 1)
 
-	action		AddNpcInput( 37 , 1 , "Sorry, i changed my mind");
+	action		AddNpcInput( 37 , 1 , "Sorry, I changed my mind");
 	action		AddNpcInput( 37 , 2 , "Okay.");
 
 	rule		TalkedToNpc( 35 ) goto TakeBread
