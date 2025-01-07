@@ -7,7 +7,7 @@
 Main
 {
 	questname 	"Rare Berries"
-	version		1
+	version		1.1
 }
 
 state Begin
@@ -29,20 +29,20 @@ state Begin2
 {
 	desc		"Collect 10 rare berries"
 	action		ShowHint("Quest reward : 1500 EXP and 500 gold (REP)")
-	action		AddNpcText( 38 , "I pay 500 gold for 20 rare berries.");
+	action		AddNpcText( 38 , "I pay 500 gold for 10 rare berries.");
 	action		AddNpcText( 38 , "Working in the fields will ofcourse give you a lot experience as well!");
 
 	action		AddNpcInput( 38 , 1 , "I give up");
 	action		AddNpcInput( 38 , 2 , "Im working on it!");
 
 	rule 		InputNpc( 1 ) goto Reset
-	rule 		GotItems( 486 , 20 ) goto Talk2
+	rule 		GotItems( 486 , 10 ) goto Talk2
 }
 
 state Begin3
 {
 	desc		"Talk to old farmer Greg."
-	action		AddNpcText( 38 , "The berries are growing in the patches of farmlands around me. There are 5 in total.");
+	action		AddNpcText( 38 , "The berries are growing in the patches of farmlands around me. There are 9 in total.");
 	action		AddNpcText( 38 , "I think that the plants spawn berries randomly but they don't always spawn them.");
 	action		AddNpcText( 38 , "Sometimes they spawn useless leaves, sadly i cannot pay you for that.");
 	action		AddNpcText( 38 , "You should remove the useless leaves, it prevents berries from growing.");
@@ -58,7 +58,7 @@ state Talk2
 	action		AddNpcText( 38 , "10 excellent berries! Thanks for your business." );
 
 	rule 		TalkedToNpc( 38 ) goto GetReward
-	rule		LostItems( 486 , 20 ) goto Begin2
+	rule		LostItems( 486 , 10 ) goto Begin2
 
 }
 
@@ -67,7 +67,7 @@ state GetReward
 	action		ShowHint("You gained 1500 EXP and 500 gold (REP)");
 	action		PlaySound(17);
 
-	action		RemoveItem( 486 , 20 )
+	action		RemoveItem( 486 , 10 )
 	action		GiveItem( 1 , 500)
 	action		GiveExp(1500)
 	action		End()
