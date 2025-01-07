@@ -53,6 +53,6 @@ state GetReward
 
 state Reset
 {
-	action		ShowHint("Slime defender quest aborted..")
+	action		ShowHint("Slime Defender quest aborted..")
 	action		Reset()
 }	

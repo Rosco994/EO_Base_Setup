@@ -85,6 +85,6 @@ state GetReward
 
 state Reset
 {
-	action		ShowHint("Rat problems quest aborted..")
+	action		ShowHint("Rat Problems quest aborted..")
 	action		Reset()
 }	

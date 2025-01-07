@@ -64,6 +64,6 @@ state GetReward
 
 state Reset
 {
-	action		ShowHint("Goat collector quest aborted..")
+	action		ShowHint("Goat Collector quest aborted..")
 	action		Reset()
 }	

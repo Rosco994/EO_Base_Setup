@@ -76,6 +76,6 @@ state GetReward
 
 state Reset
 {
-	action		ShowHint("Bread courier quest aborted..")
+	action		ShowHint("Bread Courier quest aborted..")
 	action		Reset()
 }	

@@ -32,11 +32,13 @@ state Karma
 	action		AddNpcInput( 4 , 2 , "Take 100 Karma");
 	action		AddNpcInput( 4 , 3 , "Give 10 Karma");
 	action		AddNpcInput( 4 , 4 , "Give 100 Karma");
+	action		AddNpcInput( 4 , 5 , "Nevermind...");
 
 	rule 		InputNpc( 1 ) goto Take10
 	rule 		InputNpc( 2 ) goto Take100
 	rule 		InputNpc( 3 ) goto Give10
 	rule 		InputNpc( 4 ) goto Give100
+	rule 		InputNpc( 5 ) goto Reset
 }
 
 state Class
@@ -50,12 +52,14 @@ state Class
 	action		AddNpcInput( 4 , 3 , "Make me Rogue");
 	action		AddNpcInput( 4 , 4 , "Make me Archer");
 	action		AddNpcInput( 4 , 5 , "Make me Warrior");
+	action		AddNpcInput( 4 , 5 , "Nevermind...");
 
 	rule 		InputNpc( 1 ) goto Priest
 	rule 		InputNpc( 2 ) goto Magician
 	rule 		InputNpc( 3 ) goto Rogue
 	rule 		InputNpc( 4 ) goto Archer
 	rule 		InputNpc( 5 ) goto Warrior
+	rule 		InputNpc( 5 ) goto Reset
 }
 
 state Priest
@@ -109,5 +113,11 @@ state Give10
 state Give100
 {
 	action		GiveKarma(100);
+	action		Reset();
+}
+
+state Reset
+{
+	action		ShowHint("Conversation with Wiseman aborted...")
 	action		Reset();
 }

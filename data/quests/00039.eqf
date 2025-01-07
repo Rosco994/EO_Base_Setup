@@ -126,6 +126,6 @@ state GetReward
 
 state Reset
 {
-	action		ShowHint("Sewer repairs quest aborted..")
+	action		ShowHint("Sewer Repairs quest aborted..")
 	action		Reset()
 }	

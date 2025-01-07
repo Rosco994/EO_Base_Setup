@@ -47,6 +47,6 @@ state GetReward
 
 state Reset
 {
-	action		ShowHint("Bird control quest aborted..")
+	action		ShowHint("Bird Control quest aborted..")
 	action		Reset()
 }	

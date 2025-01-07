@@ -55,6 +55,6 @@ state GetReward
 
 state Reset
 {
-	action		ShowHint("snake hunt quest aborted..")
+	action		ShowHint("Snake Hunt quest aborted..")
 	action		Reset()
 }	

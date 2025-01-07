@@ -63,6 +63,6 @@ state GetReward
 
 state Reset
 {
-	action		ShowHint("Little piggy quest aborted..")
+	action		ShowHint("Lost Piggy quest aborted..")
 	action		Reset()
 }	

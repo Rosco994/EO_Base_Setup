@@ -13,6 +13,7 @@ Main
 state Begin
 {
 	desc		"Talk to guy inside shop."
+	action		ShowHint("Quest reward : 800 EXP and 100 gold")
 	action		AddNpcText( 31 , "I know, I know.. You are probably wondering why my hair looks so good." );
 	action		AddNpcText( 31 , "To be honest it was always troublesome to get it in shape, but I'm willing to share my secret.." );
 	action		AddNpcText( 31 , "I'm rubbing my hair twice a day with this wonderful green stuff.. But unfortunately, I don't know where to find it." );
@@ -60,11 +61,11 @@ state GetReward
 	action		RemoveItem( 250 , 3 )
 	action		GiveExp(800)
 	action		GiveItem( 1 , 100)
-	action		End();
+	action		End()
 }
 
 state Reset
 {
-	action		ShowHint("Goat collector quest aborted..")
+	action		ShowHint("Funky Hair quest aborted..")
 	action		Reset()
 }	

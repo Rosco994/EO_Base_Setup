@@ -122,6 +122,6 @@ state GetReward2
 
 state Reset
 {
-	action		ShowHint("Witch quest aborted..")
+	action		ShowHint("Ayla's quest aborted..")
 	action		Reset()
 }	

@@ -9,6 +9,7 @@ Main
        questname     "Lost Dog"
        version       1.0
 }
+
 state Begin
 {
 desc "Talk with stranger"
@@ -19,16 +20,19 @@ desc "Talk with stranger"
        rule InputNpc(1) goto Continue
        rule InputNpc(2) goto BeforeReset
 }
+
 state BeforeReset
 {
 desc "Talk to Stranger"
        action AddNpcText(58, "That is a shame");
        rule TalkedToNpc(58) goto Reset
 }
+
 state Reset
 {
        action Reset();
 }
+
 state Continue
 {
 desc "Find the lost dog"
@@ -36,6 +40,7 @@ desc "Find the lost dog"
        action AddNpcText(58, "Come back when you have found my dog.");
        rule EnterCoord(187,29,41) goto Return
 }
+
 state Return
 {
 desc "Return to stranger"
@@ -43,9 +48,10 @@ desc "Return to stranger"
        action AddNpcText(58, "OH MY GOD!! You found her thank you so much. Here is your reward");
        rule TalkedToNpc(58) goto Reward
 }
+
 state Reward
 {
-        action     GiveEXP(1500);
+        action     GiveExp(1500);
         action     GiveItem(1, 5000);
         action     End();
 } 

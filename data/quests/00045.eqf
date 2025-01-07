@@ -67,6 +67,6 @@ state EndWithoutReset
 
 state Reset
 {
-	action		ShowHint("Snake Antidote quest aborted..")
+	action		ShowHint("Candy's Potion quest aborted..")
 	action		Reset();
 }	

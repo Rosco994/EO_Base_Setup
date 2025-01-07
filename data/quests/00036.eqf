@@ -44,6 +44,6 @@ state GetReward
 
 state Reset
 {
-	action		ShowHint("Sheep protector quest aborted..")
+	action		ShowHint("Sheep Protector quest aborted..")
 	action		Reset()
 }	

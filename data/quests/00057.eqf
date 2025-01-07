@@ -9,6 +9,7 @@ Main
     questname       "Journey to the Main Land"
     version         1.0
 }
+
 state Begin
 {
     desc	"Talk to the Boatman"
@@ -17,14 +18,17 @@ state Begin
     action	AddNpcInput(57, 1, "I'm ready to go!");
     action	AddNpcInput(57, 2, "No I want to stay");
     rule	InputNpc(1) goto traveltomain
-    rule	InputNpc(2) goto reset
+    rule	InputNpc(2) goto Reset
+    rule	EnterMap( 5 ) goto Reset
 }
-State traveltomain
+
+state traveltomain
 {
     action	SetCoord(1,10,17);
     action	ShowHint("Hey! You've travelled via boat to a dock south of Aeven...");
-    rule	EnterCoord(1,10,17) goto reset
+    rule	EnterCoord(1,10,17) goto Reset
 }
+
 state Reset
 {
     action	Reset();

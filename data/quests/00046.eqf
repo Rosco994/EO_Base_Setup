@@ -58,6 +58,6 @@ state GetReward
 
 state Reset
 {
-	action		ShowHint("Cactus holiday quest aborted..")
+	action		ShowHint("Cactus Holiday quest aborted..")
 	action		Reset()
 }	

@@ -63,6 +63,6 @@ state GetReward
 
 state Reset
 {
-	action		ShowHint("Castle hedgehogs quest aborted..")
+	action		ShowHint("Castle Hedgehogs quest aborted..")
 	action		Reset()
 }	

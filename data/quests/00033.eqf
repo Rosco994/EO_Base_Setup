@@ -105,6 +105,6 @@ state GetReward
 
 state Reset
 {
-	action		ShowHint("Treasure hunt quest aborted..")
+	action		ShowHint("Treasure Hunt quest aborted..")
 	action		Reset()
 }	
