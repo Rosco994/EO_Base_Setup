@@ -52,7 +52,7 @@ The compiled repository includes default maps, quests, and configuration files, 
 - **DwD Chaos**: Composer who created the background music tracks.
 - **Sakura**: Creator of the anime artwork used by the original client.
 - **Vult-r**: Creator/owner of the original server and client engine code.
-- **Julian Smythe**: Contributor to additional code improvements.
+- **Julian Smythe**: Creator of base code.
 - **Niox**: Contributor to additional code improvements.
 - **Cirras**: Contributor to additional code improvements.
 - **Ethan Moffat**: Contributor to additional code improvements.
