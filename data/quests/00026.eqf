@@ -7,7 +7,7 @@
 Main
 {
 	questname 	"Ancient Wraith"
-	version		1
+	version		1.1
 }
 
 state Begin
@@ -275,7 +275,7 @@ state Test10_2
 state Test10_3
 {
 	desc		"PK 500 humans!"
-	action		RemoveItem( 321 , 100 );
+	action		RemoveItem( 470 , 10 );
 	action		Quake(5);
 
 	action		AddNpcText( 26, "Yewww wurmmm broughhttt me all thissss itemmmm. iTsss time for the lasssst test offf evill.");
