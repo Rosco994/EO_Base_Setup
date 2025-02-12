@@ -150,7 +150,7 @@
 149= Ewalk Dungeon (Under Geggime Forest)
 150= Blobsie Gardens
 151= Halowdale
-152= Haunted Mansion (Floor #1)
+152= Haunted Mansion #1
 153= East of Halowdale (Goats)
 154= Back Stage + Art Stage
 155= Octo's Lair
@@ -233,9 +233,9 @@
 232= Sheep Area #4
 233= Cyclops Cave #3
 234= Cyclops Cave #4 Gnoll
-235= Haunted Mansion (Floor #2)
-236= Haunted Mansion (Floor #3)
-237= Haunted Mansion (Floor #4)
+235= Haunted Mansion #2
+236= Haunted Mansion #3
+237= Haunted Mansion #4
 238= Puppet Dungeon
 239= Pjedro's House
 240= Pjedro's House
@@ -244,9 +244,9 @@
 243= Ancient East #2
 244= Ancient East #3
 245= Killing Grounds (PK)
-246= Haunted Mansion (Floor #5)
-247= Haunted Mansion (Floor #6)
-248= Aeven Bank Interlink (Bank 1/2 Basement)
+246= Haunted Mansion #5
+247= Haunted Mansion #6
+248= Aeven Bank Interlink
 249= Grocery Storage
 250= Dreamworld #8 (Bogo Man)
 251= Atlantis House #1 (Floor #2)
@@ -271,7 +271,7 @@
 270= Dragon Cave
 271= Monkey Island
 272= Monkey Island (Pirate House)
-273= Ancient Wraith Entrance (Haunted Mansion (Floor #7))
+273= Ancient Wraith Entrance
 274= Mole Farm House
 275= Swamp Mansion (Room #4)
 276= Monkey Island (Pirate Hat Chest *spawn via quest script only*)
