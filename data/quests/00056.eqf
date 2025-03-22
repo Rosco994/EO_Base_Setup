@@ -13,6 +13,7 @@ Main
 state Begin
 {
 	desc		"Talk baru Shepherd, Limbo Desert."
+	rule		DoneDaily( 1 ) goto EndWithoutReset // once a day ( 1 )
 	action		AddNpcText( 56 , "It's so warm out here, if only i could cool down a little bit.." );
 
 	rule 		TalkedToNpc( 56 ) goto Begin2
@@ -27,7 +28,6 @@ state Begin2
 	action		AddNpcInput( 56 , 1 , "Forget it");
 	action		AddNpcInput( 56 , 2 , "Im working on it!");
 
-	rule		DoneDaily( 1 ) goto EndWithoutReset // once a day ( 1 )
 	rule 		InputNpc( 1 ) goto Reset
 	rule 		GotItems( 338 , 5 ) goto Begin3
 	rule 		GotItems( 337 , 5 ) goto Begin4
@@ -42,7 +42,6 @@ state Begin3
 	action		AddNpcInput( 56 , 1 , "Forget it");
 	action		AddNpcInput( 56 , 2 , "Im working on it!");
 
-	rule		DoneDaily( 1 ) goto EndWithoutReset // once a day ( 1 )
 	rule 		InputNpc( 1 ) goto Reset
 	rule 		GotItems( 337 , 5 ) goto Talk2
 	rule		LostItems( 338 , 5 ) goto Begin2
@@ -57,7 +56,6 @@ state Begin4
 	action		AddNpcInput( 56 , 1 , "Forget it");
 	action		AddNpcInput( 56 , 2 , "Im working on it!");
 
-	rule		DoneDaily( 1 ) goto EndWithoutReset // once a day ( 1 )
 	rule 		InputNpc( 1 ) goto Reset
 	rule 		GotItems( 338 , 5 ) goto Talk2
 	rule		LostItems( 337 , 5 ) goto Begin2

@@ -13,6 +13,7 @@ Main
 state Begin
 {
 	desc		"Talk to Ash or Boum."
+	rule		DoneDaily( 1 ) goto EndWithoutReset
 	action		AddNpcText( 50 , "Hi stranger! I'm on a fox hunt together with my brother, to improve our chances we have split up to hunt east and west of Aeven." );
 	action		AddNpcText( 50 , "We can use some help.." );
 
@@ -34,7 +35,6 @@ state Begin2
 	action		AddNpcInput( 50 , 2 , "Ok, no problem!");
 
 	rule 		GotItems( 252 , 15 ) goto Talk2
-	rule		DoneDaily( 1 ) goto EndWithoutReset
 	rule 		InputNpc( 1 ) goto Reset
 }
 

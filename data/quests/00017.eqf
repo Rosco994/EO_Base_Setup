@@ -13,6 +13,7 @@ Main
 state Begin
 {
 	desc		"Talk to Maze Master, Castle"
+	rule		DoneDaily( 3 ) goto EndWithoutReset // 3x a day
 	action		AddNpcText( 17 , "Hello stranger I am the proud owner of this useless and extremely difficult maze." );
 	action		AddNpcText( 17 , "Do you want to know more?" );
 
@@ -32,7 +33,6 @@ state Begin1
 	action		AddNpcInput( 17 , 1 , "Sure, why not");
 	action		AddNpcInput( 17 , 2 , "No, sorry");
 
-	rule		DoneDaily( 3 ) goto EndWithoutReset // 3x a day
 	rule 		InputNpc( 1 ) goto DoubleCheck
 	rule		InputNpc( 2 ) goto GoReset
 

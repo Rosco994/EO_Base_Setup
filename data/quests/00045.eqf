@@ -13,6 +13,7 @@ Main
 state Begin
 {
 	desc		"Talk to Candy, Aeven."
+	rule		DoneDaily( 1 ) goto EndWithoutReset
 	action		AddNpcText( 45 , "Hi I'm Candy, the new apprentice of Aeven's mighty witch." );
 
 	rule 		TalkedToNpc( 45 ) goto Begin2
@@ -29,7 +30,6 @@ state Begin2
 	action		AddNpcInput( 45 , 2 , "I'm working on it!");
 
 	rule 		GotItems( 253 , 5 ) goto Talk2
-	rule		DoneDaily( 1 ) goto EndWithoutReset
 	rule 		InputNpc( 1 ) goto Reset
 }
 
