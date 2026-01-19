@@ -7,6 +7,9 @@ This repository is a compiled, modified version of the EOServ project, enhanced 
 - SLN
 - Weddings
 - Inn Sleeping
+- Passive Pet System
+- Scale spell effects by spell level
+- Fully Intergrated Split Pub Files by default feature
 
 ## Setup Guide for Linux
 Follow these steps to set up EOServ on Linux/Ubuntu, including configurations for MariaDB.
